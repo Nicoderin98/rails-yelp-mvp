@@ -1,0 +1,15 @@
+<div class="card">
+  <h2><%= @restaurant.name %></h2>
+  <ul>
+      <% @restaurant.reviews.each do |review| %>
+      <li>
+        <% date = review.created_at.strftime("%c").split %>
+        <p><%= date[1] + " " + date [2] + ", " + date[4] %></p>
+        <div>
+          <p>Score: <%= review.rating %>/5</p>
+        </div>
+      </li>
+          <p class="content"><%= review.content %></p>
+      <% end %>
+  </ul>
+</div>
